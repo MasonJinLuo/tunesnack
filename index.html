@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/icofont.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> </head>
+
+<body>
+    <div class="text-center" id="cool-message" style="display:none;">
+        <div class="row text-center">
+            <div class="col-sm-5 col-sm-offset-4"> <img id="logo" src="images/logo.png"> </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1 id="app-header">TuneSnack</h1>
+                <h2 id="loading-message">You are awesome !!!</h2> </div>
+        </div>
+    </div>
+    <div id="login-elements" class="container" style="display:none;">
+        <!-- intro section starts -->
+        <section id="intro">
+            <div class="section-intro">
+                <div class="row text-center">
+                    <div class="col-sm-5 col-sm-offset-4"> <img id="logo" src="images/logo.png"> </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h1 id="app-header">TuneSnack</h1>
+                        <p id="under-heading" class="lead">TuneSnack is your one stop destination to listen to your favorite tunes and connect with fellow music lovers !</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- intro section ends -->
+        <!-- login section starts -->
+        <section class="login">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 section-login">
+                    <form class="text-center">
+                        <div class="form-group">
+                            <label></label>
+                            <input id="username" class="form-control input-lg" type="text" placeholder="Username"> </div>
+                        <div id="warning" class="form-group" style="display:none;"> <small style="color:red;" id="warning-message"></small> </div>
+                        <div class="form-group">
+                            <h4 class="text-center" style="color:white">Snack on your favorite genre</h4> </div>
+                        <!-- Sarah's login work goes here -->
+                        <div class="form-group">
+                            <select class="form-control input-lg" id="genreoptions">
+                                <option id="pop" value="pop">Pop</option>
+                                <option id="rock" value="rock">Rock</option>
+                                <option id="indie" value="indie">Indie</option>
+                                <option id="electric" value="electric">Electronic</option>
+                                <option id="country" value="country">Country</option>
+                            </select>
+                            <button id="enter" class="btn btn-lg btn-snack" style="color:white">Start Munching</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- login section ends -->
+    <div id="chat-elements" class="container" style="display:none;">
+        <section>
+            <div class="page-header text-center">
+                <h1 style="color:white;">Hi <span id="name"></span> !! Welcome To TuneSnack !!</h1> </div>
+        </section>
+        <section>
+            <ul id="channels" class="list-unstyled row text-center">
+                <li class="text-center">
+                    <div class="channel col-sm-2" data-channel="pop"><i id="pop-icon" class="icofont icofont-play-alt-3 icofont-5x"></i>
+                        <h4>Pop</h4></div>
+                </li>
+                <li class="text-center">
+                    <div class="channel col-sm-2" data-channel="rock"><i id="rock-icon" class="icofont icofont-play-alt-3 icofont-5x"></i>
+                        <h4>Rock</h4></div>
+                </li>
+                <li class="text-center">
+                    <div class="channel col-sm-2" data-channel="indie"><i id="indie-icon" class="icofont icofont-play-alt-3 icofont-5x"></i>
+                        <h4>Indie</h4> </div>
+                </li>
+                <li class="text-center">
+                    <div class="channel col-sm-2" data-channel="electric"> <i id="electric-icon" class="icofont icofont-play-alt-3 icofont-5x"></i>
+                        <h4>Electronic</h4></div>
+                </li>
+                <li class="text-center">
+                    <div class="channel col-sm-2" data-channel="country"><i id="country-icon" class="icofont icofont-play-alt-3 icofont-5x"></i>
+                        <h4>Country</h4></div>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div id="chat-window" class="panel panel-default">
+                        <!-- chat panel -->
+                        <div id="chat-panel" class="panel-body">
+                            <ul id="chat-list" class="list-unstyled"> </ul>
+                        </div>
+                        <!-- chat footer -->
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="chat-user" type="hidden" />
+                                <input id="chat-input" type="text" class="form-control input-sm chat_input" placeholder="Type your message here..." /> <span class="input-group-btn">
+                                    <button id="chat-send" class="btn btn-sm btn-snack" style="color:white">Munch</button>
+                                </span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script src="js/chat.js"></script>
+    <script>
+        $('.channel').click(function () {
+            var genre = $(this).attr('data-channel');
+            localStorage.setItem('genre', genre);
+            setTimeout("$('#chat-elements').fadeOut('slow');", 250);
+            setTimeout("location.reload();", 500);
+        });
+    </script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            if (localStorage.getItem('genre') === null) {
+                setTimeout("$('#login-elements').fadeIn('slow');", 500);
+            }
+            else {
+                refresh_chat_room(localStorage.getItem('genre'));
+            }
+        });
+    </script>
+</body>
+<div class="radionomy-player"></div>
+
+</html>
