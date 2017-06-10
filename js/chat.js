@@ -5,7 +5,7 @@
 // Initialize Firebase
 
 var config = {
-    apiKey: configApi.apiKey //input api key here
+    apiKey: "" //input api key here
     , authDomain: "tunesnack.firebaseapp.com"
     , databaseURL: "https://tunesnack.firebaseio.com"
     , storageBucket: "tunesnack.appspot.com"
